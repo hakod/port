@@ -8,6 +8,7 @@ var nav = document.getElementsByClassName("navi")[0]
 
 var sc = nav.offsetTop;
 
+
 function getP(el){
   let x = 0;
   let xx = el.offsetTop + el.offsetHeight;
