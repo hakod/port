@@ -6,7 +6,10 @@ const MongoClient = require('mongodb');
 const app = express();
 const path = require('path')
 const CON = process.env.MONGO
+const helmet = require('helmet')
 
+app.use(helmet());
+app.use(helmet.xssFilter());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true ,userNewUrlParse: true}));
 app.use(express.static(__dirname + '/public'));

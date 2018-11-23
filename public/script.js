@@ -1,4 +1,7 @@
-
+window.addEventListener("load", function(){
+  var load = document.getElementsByClassName("load")[0]
+  document.body.removeChild(load)
+})
 
 window.onscroll = function() {myFunction()}
 var about = document.getElementsByClassName("about")[0]
@@ -19,7 +22,7 @@ function getP(el){
   return {x: x, xx: xx}
 }
 
-setInterval(function(){console.log(window.scrollY+sc, getP(about))},(3000))
+
 function myFunction(){
   if (window.scrollY >= sc) {
     nav.style.position = 'fixed'
@@ -27,6 +30,18 @@ function myFunction(){
     nav.style.left = 0;
   } else {
     nav.style.position = 'absolute'
+  }
+  if (window.scrollY+500 >= getP(about).x){  
+    document.getElementsByClassName("text")[0].style.animation = 'fade .8s ease-in';
+    document.getElementsByClassName("text")[0].style.animationFillMode = 'forwards';
+  }
+  if (window.scrollY+500 >= getP(document.getElementsByClassName("flex")[0]).x){  
+    document.getElementsByClassName("flex")[0].style.animation = 'move 1s ease-out';    
+    document.getElementsByClassName("flex")[0].style.animationFillMode = 'forwards';
+  }
+  if (window.scrollY+500 >= getP(document.getElementsByClassName("containpro")[0]).x){  
+    document.getElementsByClassName("containpro")[0].style.animation = 'fade .8s ease-in';    
+    document.getElementsByClassName("containpro")[0].style.animationFillMode = 'forwards';
   }
   if (window.scrollY+90 >= getP(about).x) {
     document.querySelectorAll("a[href='#about']")[0].style.color = '#c0fcad'
