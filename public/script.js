@@ -27,26 +27,18 @@ var nav = document.getElementsByClassName("navi")[0]
 
 var sc = nav.offsetTop;
 
-
-function getP(el){
+function getP(e){
   let x = 0;
-  let xx = el.offsetTop + el.offsetHeight;
-  while (el) {
-    x += (el.offsetTop - el.scrollTop + el.clientTop)
-    el = el.offsetParent
+  let xx = e.offsetTop + e.offsetHeight;
+  while (e) {
+    x += (e.offsetTop - e.scrollTop + e.clientTop)
+    e = e.offsetParent
   }
   return {x: x, xx: xx}
 }
 
 
 function myFunction(){
-  if (window.scrollY >= sc) {
-    nav.style.position = 'fixed'
-    nav.style.top = 0;
-    nav.style.left = 0;
-  } else {
-    nav.style.position = 'absolute'
-  }
   // if (window.scrollY+500 >= getP(about).x){  
   //   document.getElementsByClassName("text")[0].style.animation = 'fade .5s ease-in';    
   //   document.getElementsByClassName("text")[0].style.animationDelay = '.3s'
@@ -62,6 +54,8 @@ function myFunction(){
   //   document.getElementsByClassName("containpro")[0].style.animationDelay = '.3s'
   //   document.getElementsByClassName("containpro")[0].style.animationFillMode = 'forwards';
   // }
+  
+    console.log(window.scrollY+90, getP(about))
   if (window.scrollY+90 >= getP(about).x) {
     document.querySelectorAll("a[href='#about']")[0].style.color = '#c0fcad'
   } else {
