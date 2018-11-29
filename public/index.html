@@ -9,14 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css">
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css">    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="/script.js"></script>
+    <script src="/wow.min.js"></script>
   </head>    
   <body>    
+    <script>
+              new WOW().init();
+    </script>
     <header>
-    <nav id="navi" class="navi">
+    <nav id="navi" class="navi wow slideInRight">
       <a href="#home">HOME</a>
       <a href="#about">ABOUT</a>
       <a href="#projects">PROJECTS</a>
@@ -25,44 +29,47 @@
   </header>
     
     <div class="load">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
+      <div class="dot wow infinite bounce"></div>
+      <div class="dot wow infinite bounce"></div>
+      <div class="dot wow infinite bounce"></div>
     </div>
   <div class="grid-container">    
     <div id="home" class="home">
       <div class="bg-image"></div>
-      <h3>
+      <h3 class="wow slideInDown" data-wow-delay=".5s">
         Welcome to my portfolio, I'm Bernie.
       </h3>
-      <h1>
+      <h1 class="wow rollIn slow" data-wow-delay="1s">
       WEB DEVELOPER
       </h1>
       <div class="log">
-      <a target="_blank" href="https://github.com/hakod" class="but"><img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fgithub-512.png?1542847726317" alt="github" height="60"/></a>  
-      <a target="_blank" href="https://glitch.com/@hakod" class="but"><img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fglitch.png?1542847737541" alt="glitch" width="60" height="60" /></a>  
-      <a href="mailto:hakodate@protonmail.com" class="but"><img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2FMail-512.png?1542847745870" alt="email" width="60"/></a>
+      <a target="_blank" href="https://github.com/hakod" class="but wow flipInX slow" data-wow-delay="2s"><img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fgithub-512.png?1542847726317" alt="github" height="60"/></a>  
+      <a target="_blank" href="https://glitch.com/@hakod" class="but wow flipInX slow" data-wow-delay="2.3s"><img src="https://avatars3.githubusercontent.com/oa/198804?s=120&u=a0f249049af77e33c107f2762565760e5b6966f5&v=4" alt="glitch" width="60" height="60" /></a>  
+      <a href="mailto:hakodate@protonmail.com" class="but wow flipInX slow" data-wow-delay="2.6s"><img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2FMail-512.png?1542847745870" alt="email" width="60"/></a>
       </div>
     </div>
     <div id="about">
       
-    <h2 class="about">
+    <h2 class="about wow slideInLeft" data-wow-delay=".5s">
       ABOUT ME
       </h2>
       
-      <div class="text">
+      <div class="text" data-wow-delay="1s">
         
-        <p>
-         Hello, I'm Bernie, web developer from Vancouver, Canada. My main focus is in Javascript development. Creating engaging and interesting frontend solutions is my goal through the use of HTML, CSS and Javascript. Solutions and learning new things is what drives my passion.  
+        <p class="wow fadeInLeft fast" data-wow-delay="1s">
+         Hello, I'm Bernie, web developer from Vancouver, Canada. My main focus is in Javascript development. Creating engaging and interesting frontend solutions is my goal through the use of HTML, CSS and Javascript.  
         </p>
-        <img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo1.jpg?1542847768318">
-        <img src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo2.jpeg?1542847752996"> 
-        <p>
-         Mobile friendly design and responsiveness is important to my development. I find sites most enjoyable when they provide smooth experiences with little intrusion to the end user. Node.js, Express, and MongoDB are my tools for the backend, and provide a foundation for my website.
+          <ul class="wow fadeInRight fast" data-wow-delay="1s">
+            <li>Webpack</li>
+            <li>React</li>
+            <li>Redux</li>
+          </ul>
+        <img class="wow fadeInLeft fast" data-wow-delay="1s" src="https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo2.jpeg?1542847752996" alt="laptop"> 
+        <p class="wow fadeInRight fast" data-wow-delay="1s">
+         Mobile friendly design and responsiveness is important to my development. Smooth UI with little intrusion to the end user. Node.js, Express, and MongoDB are my tools for the backend, and provide a foundation for my website.
         </p>        
       </div>
-      <div class="photo">
-        <div class="flex">
+        <div class="flex wow zoomInRight" data-wow-delay=".5s">
       <img src="https://cdn-images-1.medium.com/max/1600/1*DN7ToydkJZEdVaJVK_Nhvw.png" alt="JS">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML">
       <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS">
@@ -70,15 +77,14 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="node">
       <img src="https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.svg" alt="mongo">
       </div>
-      </div>
     </div>
     <div id="projects" class="projects">
       <div>
-        <h2>
+        <h2 class="about wow slideInRight" data-wow-delay=".5s">
         PROJECTS
       </h2>
       </div>        
-      <div class="containpro">
+      <div class="containpro wow slideInLeft" data-wow-delay="1s">
         <div>
         <h3>
           Portfolio site
@@ -131,9 +137,9 @@
       
     </div>
     <div id="contact" class="contact">
-      <h2>
+      <h2 class="about wow slideInLeft" data-wow-delay=".5s">
         SAY HELLO
-      </h2>
+      </h2>    
         <form method="post" action="/">
           NAME <br>
           <input name="name" type="text" placeholder="name..." required> <br>
@@ -143,14 +149,11 @@
           <textarea name="message" rows="10" cols="15" placeholder="message..." required></textarea>
           <br>
           <input name="submit" type="submit" value="SEND">
-        </form>   
+        </form>
       <footer>
-      Design & code by Bernie 2018 &#169; &#x1f600;
+      Design & code by Bernie 2018 &#169;
     </footer>
-    </div>
-    
-    </div>
-    
-  </body>
- 
+    </div>    
+    </div>    
+  </body> 
 </html>
