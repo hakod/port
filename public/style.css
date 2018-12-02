@@ -5,6 +5,9 @@ html, body {
   padding: 0;
   scroll-behavior: smooth;
 }
+header {
+  overflow: hidden;
+}
 .wow {
   visibility: hidden;
   overflow: hidden;
@@ -40,24 +43,31 @@ html, body {
   text-align: center;
   font-size: 3em;
   position: relative;
-  top: 23vh;
+  top: 3em;
   color: white;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
+}
+.home h1:before {
+  content: "";
+  position: absolute;
+  padding: .5em;
+  bottom: 0;
+  border-bottom: 5px solid #dac4ba;
 }
 .home h3 {
   line-height: 1.6;
   padding: 2em;
   position: relative;
-  top: 12em;
+  top: 10em;
   color: white;
-  font-size: .9em;
+  font-size: 1.2em;
   text-align:center;
   letter-spacing: .4em;
   font-weight: 500;
 }
 .grid-container {
   display: grid;
-  grid-template-rows: 0 minmax(100vh, 400px) minmax(100vh,auto) minmax(120vh,auto) minmax(100vh,auto);
+  grid-template-rows: 0 minmax(100vh, 600px) minmax(100vh,auto) minmax(120vh,auto) minmax(100vh,auto);
   grid-template-columns: repeat(12, 1fr);
 }
 a:before {
@@ -76,7 +86,7 @@ a:hover:before {
   transform: scaleX(1);
 }
 .navi a {
-  font-weight: 100;
+  font-weight: 700;
   outline: none;
   font-size: .8em;
   letter-spacing: .2em;
@@ -86,15 +96,16 @@ a:hover:before {
   text-decoration: none;
 }
 .navi a:hover {
-  color: #c0fcad !important;
+  color: #d9bdb1 !important;
 }
 .navi {
   text-align: right;
   width: 100%;
   top: 0;  
-  position: fixed;
+  transition: all .8s ease-in-out;
+  overflow: hidden;
+  position: absolute;
   line-height: 3.5;
-  background-color: black;
   z-index: 9;  
 }
 
@@ -102,7 +113,8 @@ a:hover:before {
   background-size: 90em;
   background-position: center bottom;
   background-attachment: fixed;
-  background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-360912.jpeg?1542937339252");
+  background-color: #8faba8;
+  //background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-360912.jpeg?1542937339252");
   grid-row: 1 / 3;
   grid-column: 1/-1;
   max-width: 100%;
@@ -110,18 +122,26 @@ a:hover:before {
 }
 .but {
   cursor: pointer;
-  top: 8em;
+  top: 10em;
   position: relative;  
-  margin: 1em;
-  width: 60px;
-  height: 60px;
-  filter: none;  
-  background-color: #267cb5;  
-  transition: all .5s ease-out;
+  margin: .6em;
+  width: 50px;
+  height: 50px;
+  background: white;
+  filter: grayscale(50%);
+  border-radius: 10px;
 }
-.but:hover {
-  filter: hue-rotate(90deg);
-  transition: all .1s ease-in;
+.but:before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 100%;
+  filter: none;
+  transform: rotate(20deg);
+  background: rgba(242,182,214, .7);
+}
+.but:before:hover {
+  transition: 1s ease-in-out;
 }
 .log {
   display: flex;
@@ -146,7 +166,7 @@ a:hover:before {
   max-width: 100%;
   overflow: hidden;
 }
-.containpro {
+.containpro {  
   padding-top: 50px;
   display: grid;
   justify-content: center;
@@ -155,31 +175,85 @@ a:hover:before {
   padding-bottom: 50px;
 }
 .containpro > * {
-  background-color: #e6f2f1;
+  border: 2px solid white;
   display: block;
+  overflow: hidden;
   height: 15em;
+}
+.project {
+  padding-top: 20px;
+  background: rgba(34,34,34,.4);
+  transform: translateY(-250px);
+  height: 100%;
+  transition: all .8s;
+}
+.containpro>*:hover .project {
+  transform: translateY(-20px)
+}
+.pro1 {
+  z-index: -1;
+  transform: translateY(-255px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  height: 100%;
+}
+.pro2 {
+  z-index: -1;
+  transform: translateY(-255px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  height: 100%;
+}
+.pro3 {
+  z-index: -1;
+  transform: translateY(-255px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  height: 100%;
+}
+.pro4 {
+  z-index: -1;
+  transform: translateY(-255px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  height: 100%;
 }
 .live {  
   align-items: center;
   top: 50%;
-  left: 10%;
+  left: 20px;
   padding: 20px;
-  color: #212833;
+  color: white;
   border: 5px solid #269cb5;
   margin: auto;
   position: relative;
   outline: none;
+  z-index: 3;
   background-color: #269cb5;
 }
+.text p {
+  color: #00000f;
+  line-height: 100%;
+  letter-spacing: 3px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+}
 h3 {
+  z-index: 3;
   position: relative;
   text-align: center;
-  color: #212833;
+  color: white;
 }
 .grid-container > div:nth-child(4)  {
   grid-row: 5 / 6;
   grid-column: 1/-1;
-  background-color: #c1605c;
+  background-color: #dcdde1;
   display: grid;
   grid-template-rows: repeat(12, 50px);
   grid-template-columns: repeat(11, 1fr);
@@ -244,6 +318,7 @@ footer {
   overflow: auto;
   align-content: space-between;
   grid-template-columns: repeat(2,1fr);
+  z-index: 2;
 }
 .text section{
   background-color: #d1e1e0;
@@ -253,19 +328,17 @@ footer {
   align-items: center;
   vertical-align: middle;
 }
-.text img:nth-child(1) {
-  margin: auto;
+.text img {
   width: 100%;
+  filter: grayscale(50%);
+  transform: scale(1.1);
+  transition: .5s;
 }
-.text p {
-  color: #00000f;
-  line-height: 100%;
-  letter-spacing: 3px;
-  margin: 0 auto;
-  padding: 30px;
-  text-align: center;
-  font-size: 20px;
+.text img:hover {
+  filter: none;
+  transform: scale(1.2);
 }
+
 .text ul{
   background-color: #d9bdb1;
   color: white;
@@ -280,7 +353,7 @@ footer {
   letter-spacing: 3px;
 }
 .text section:nth-child(4) {
-  float:left;
+  
 }
 .text section:nth-child(4) img {
   display: inline-block;
@@ -299,6 +372,8 @@ footer {
   justify-content: center;
   overflow: hidden;  
   background-color: #dcdde1;
+  z-index: 1;
+  margin-bottom: 100px;
 }
 .flex img {
   margin: 10px;
@@ -306,6 +381,12 @@ footer {
   height: 5em;
   width: 5em;    
   overflow: hidden;
+  transition: .5s;
+  filter: grayscale(50%);
+}
+.flex img:hover {
+  transform: scale(1.5);
+  filter: contrast(130%);
 }
 h2 {  
   color: #0f000f;
@@ -326,37 +407,42 @@ h2:before {
   top: 80%;
   right: 50%;
   transform: translateX(50%);
-  border-bottom: 2px solid #fffffd; 
+  border-bottom: 2px solid #dac4ba; 
 }
 
 .projects p {  
-  color: #00000f;
+  color: white;
+  z-index: 3;
   text-align: center;
   font-size: 15px;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 800px){
   .flex img {
     padding: 1em;
     height: 3em;
     width: 3em;
   }
   .grid-container {
-    grid-template-rows: 0 minmax(100vh,auto) minmax(50vh,auto) minmax(50vh,auto) minmax(50vh,auto);
+    grid-template-rows: 0 minmax(100vh,auto-fit) minmax(50vh,auto) minmax(50vh,auto) minmax(50vh,auto);
   }
   
   .home h1 {
     font-size: 2em;
-    top: 5em;
+    top: 3em;
   }
   .home h3 {
-    top: 10em;
+    font-size: 1em;
+    top: 7em;
   }
   h2 {
     font-size: 1.5em;
   }
-  p {
-    font-size: 1em;
+  .text p {
+    font-size: 15px;
+  }
+  .text ul {
+    font-size: 15px;
   }
   .navi {
     top: 0;
@@ -368,11 +454,10 @@ h2:before {
     line-height: 2.5;
   }
   .flex img {
-    height: 5em;
-    width: 5em;
+    height: 3em;
+    width: 3em;
   }
   .containpro > * {
-    background-color: #a7adab;
     height: 15em;
   }
   input, textarea  {
