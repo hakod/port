@@ -4,6 +4,8 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  perspective: 1000;  
+  backface-visibility: hidden;
 }
 header {
   overflow: hidden;
@@ -43,22 +45,31 @@ header {
   text-align: center;
   font-size: 3em;
   position: relative;
-  top: 3em;
+  top: 2.5em;
   color: white;
-  letter-spacing: .1em;
+  padding-bottom: 20px;
+  letter-spacing: .2em;
+  text-shadow: 1px 1px 1px #dac4ba,
+               2px 2px 1px #dac4ba,
+               3px 3px 1px #dac4ba,
+               4px 4px 1px #dac4ba,
+               5px 5px 1px #dac4ba;
 }
 .home h1:before {
   content: "";
   position: absolute;
-  padding: .5em;
+  width: 100%;
   bottom: 0;
-  border-bottom: 5px solid #dac4ba;
+  transform: scaleX(.3);
+  border-bottom: 3px solid #dac4ba;
+  left: 0;  
+  z-index: 1;
 }
 .home h3 {
   line-height: 1.6;
   padding: 2em;
   position: relative;
-  top: 10em;
+  top: 8em;
   color: white;
   font-size: 1.2em;
   text-align:center;
@@ -86,11 +97,11 @@ a:hover:before {
   transform: scaleX(1);
 }
 .navi a {
-  font-weight: 700;
+  font-weight: 500;
   outline: none;
-  font-size: .8em;
-  letter-spacing: .2em;
-  padding: 2em;
+  font-size: .9em;
+  letter-spacing: .4em;
+  padding: 1em;
   color: white;
   z-index: 3;
   text-decoration: none;
@@ -105,7 +116,7 @@ a:hover:before {
   transition: all .8s ease-in-out;
   overflow: hidden;
   position: absolute;
-  line-height: 3.5;
+  line-height: 3;
   z-index: 9;  
 }
 
@@ -114,22 +125,26 @@ a:hover:before {
   background-position: center bottom;
   background-attachment: fixed;
   background-color: #8faba8;
-  //background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-360912.jpeg?1542937339252");
+  background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-360912.jpeg?1542937339252");
   grid-row: 1 / 3;
   grid-column: 1/-1;
   max-width: 100%;
-  overflow: hidden;  
+  overflow: hidden;    
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 .but {
   cursor: pointer;
-  top: 10em;
+  top: 9em;
   position: relative;  
   margin: .6em;
   width: 50px;
   height: 50px;
   background: white;
   filter: grayscale(50%);
-  border-radius: 10px;
+  border-radius: 10px;  
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 .but:before {
   content: '';
@@ -156,7 +171,9 @@ a:hover:before {
   grid-template-columns: repeat(auto-fit, 2fr);
   grid-template-rows: auto;
   max-width: 100%;
-  overflow: hidden;  
+  overflow: hidden;    
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 .grid-container > div:nth-child(3)  {
   grid-row: 4 / 5;
@@ -164,7 +181,9 @@ a:hover:before {
   background-attachment: fixed;
   background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-37728.jpeg?1543473260282");  
   max-width: 100%;
-  overflow: hidden;
+  overflow: hidden;  
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 .containpro {  
   padding-top: 50px;
@@ -175,15 +194,15 @@ a:hover:before {
   padding-bottom: 50px;
 }
 .containpro > * {
-  border: 2px solid white;
   display: block;
   overflow: hidden;
   height: 15em;
+  border-radius: 5px;
 }
 .project {
   padding-top: 20px;
-  background: rgba(34,34,34,.4);
-  transform: translateY(-250px);
+  background: rgba(4,44,94,.6);
+  transform: translateY(-270px);
   height: 100%;
   transition: all .8s;
 }
@@ -192,34 +211,56 @@ a:hover:before {
 }
 .pro1 {
   z-index: -1;
-  transform: translateY(-255px);
+  transform: translateY(-260px);
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  background-image: url("https://media.giphy.com/media/cBKMTJGAE8y2Y/200w_d.gif");
+  filter: grayscale(50%);
   height: 100%;
 }
 .pro2 {
   z-index: -1;
-  transform: translateY(-255px);
+  filter: grayscale(50%);
+  transform: translateY(-260px);
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  background-image: url("https://images.pexels.com/photos/261706/pexels-photo-261706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   height: 100%;
 }
 .pro3 {
   z-index: -1;
-  transform: translateY(-255px);
+  filter: grayscale(50%);
+  transform: translateY(-260px);
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  background-image: url("https://images.pexels.com/photos/241544/pexels-photo-241544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   height: 100%;
 }
 .pro4 {
   z-index: -1;
-  transform: translateY(-255px);
+  filter: grayscale(50%);
+  transform: translateY(-260px);
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://media0.giphy.com/media/5PL04KKJp5VAs/giphy.gif");
+  background-image: url("https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 100%;
+}
+.pro5 {
+  z-index: -1;
+  filter: grayscale(50%);
+  transform: translateY(-260px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://images.pexels.com/photos/162500/measurement-millimeter-centimeter-meter-162500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 100%;
+}
+.pro6 {
+  z-index: -1;
+  filter: grayscale(50%);
+  transform: translateY(-260px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://images.pexels.com/photos/9051/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   height: 100%;
 }
 .live {  
@@ -236,13 +277,31 @@ a:hover:before {
   background-color: #269cb5;
 }
 .text p {
+  width: auto;
   color: #00000f;
-  line-height: 100%;
-  letter-spacing: 3px;
+  line-height: 1.5;
+  height: autofill;
   margin: 0 auto;
+  letter-spacing: 3px;
   padding: 30px;
+  font-weight: 500;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
+}
+h4 {
+  text-decoration: underline overline double;
+  width: auto;
+  color: #00000f;
+  line-height: 1.5;
+  margin: 0 auto;
+  letter-spacing: 3px;
+  padding-top: 30px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 15px;
+}
+.title {
+  color: white !important
 }
 h3 {
   z-index: 3;
@@ -255,7 +314,9 @@ h3 {
   grid-column: 1/-1;
   background-color: #dcdde1;
   display: grid;
+  background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-1252869.jpeg?1542937527344");
   grid-template-rows: repeat(12, 50px);
+  background-attachment: fixed;
   grid-template-columns: repeat(11, 1fr);
   max-width: 100%;
   overflow: hidden;
@@ -269,10 +330,6 @@ input, textarea  {
   resize: none;
   font-weight: 100;
 }
-input:focus, textarea:focus {
-  transition: all .3s ease-in;
-  border: 2px solid #c0fcad;
-}
 input[type=submit] {
   height: 2em;
   width: 5em;
@@ -284,7 +341,7 @@ input[type=submit] {
 }
 input[type=submit]:hover {
   transition: all ease-in .3s;
-  background-color: #267cb5;
+  background-color: #224a54;
   color: white;
   cursor: pointer;
 }
@@ -321,26 +378,24 @@ footer {
   z-index: 2;
 }
 .text section{
-  background-color: #d1e1e0;
+  background-color: #dcdde1;
   height: 100%;  
   width: auto;
   position: relative;
-  align-items: center;
-  vertical-align: middle;
 }
 .text img {
   width: 100%;
-  filter: grayscale(50%);
+  filter: grayscale(.9);
   transform: scale(1.1);
   transition: .5s;
 }
 .text img:hover {
-  filter: none;
-  transform: scale(1.2);
+  //filter: none;
+  //transform: scale(1.2);
 }
 
 .text ul{
-  background-color: #d9bdb1;
+  background-color: #224a54;
   color: white;
   height: 100%;
   width: 100%;
@@ -348,9 +403,11 @@ footer {
   text-align: center;
   list-style: none;
   padding-left: 0;
+  font-weight: 500;
+  font-size: 15px;
   list-style-type: none;
-  line-height: 100%;
-  letter-spacing: 3px;
+  line-height: 1.5;
+  letter-spacing: 8px;
 }
 .text section:nth-child(4) {
   
@@ -377,16 +434,14 @@ footer {
 }
 .flex img {
   margin: 10px;
+  filter: grayscale(.5);
   padding: 2em;
   height: 5em;
   width: 5em;    
   overflow: hidden;
   transition: .5s;
-  filter: grayscale(50%);
-}
-.flex img:hover {
-  transform: scale(1.5);
-  filter: contrast(130%);
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 h2 {  
   color: #0f000f;
@@ -403,7 +458,7 @@ h2 {
 h2:before {
   content: "";
   position: absolute;
-  width: 8em;
+  width: 3em;
   top: 80%;
   right: 50%;
   transform: translateX(50%);
@@ -416,7 +471,9 @@ h2:before {
   text-align: center;
   font-size: 15px;
 }
-
+.contact h2 {
+  color: white !important;
+}
 @media only screen and (max-width: 800px){
   .flex img {
     padding: 1em;
@@ -450,7 +507,7 @@ h2:before {
     font-size: .7em;
     float: left;
     clear: left;
-    text-align: right;
+    text-align: center;
     line-height: 2.5;
   }
   .flex img {
