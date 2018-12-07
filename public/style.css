@@ -49,11 +49,11 @@ header {
   color: white;
   padding-bottom: 20px;
   letter-spacing: .2em;
-  text-shadow: 1px 1px 1px #dac4ba,
-               2px 2px 1px #dac4ba,
-               3px 3px 1px #dac4ba,
-               4px 4px 1px #dac4ba,
-               5px 5px 1px #dac4ba;
+  text-shadow: 1px 1px 1px #9dbccd,
+               2px 2px 1px #9dbccd,
+               3px 3px 1px #9dbccd,
+               4px 4px 1px #9dbccd,
+               5px 5px 1px #9dbccd;
 }
 .home h1:before {
   content: "";
@@ -61,7 +61,7 @@ header {
   width: 100%;
   bottom: 0;
   transform: scaleX(.3);
-  border-bottom: 3px solid #dac4ba;
+  border-bottom: 5px solid white;
   left: 0;  
   z-index: 1;
 }
@@ -69,7 +69,7 @@ header {
   line-height: 1.6;
   padding: 2em;
   position: relative;
-  top: 8em;
+  top: 9.5em;
   color: white;
   font-size: 1.2em;
   text-align:center;
@@ -116,7 +116,7 @@ a:hover:before {
   transition: all .8s ease-in-out;
   overflow: hidden;
   position: absolute;
-  line-height: 3;
+  line-height: 5;
   z-index: 9;  
 }
 
@@ -135,7 +135,7 @@ a:hover:before {
 }
 .but {
   cursor: pointer;
-  top: 9em;
+  top: 7em;
   position: relative;  
   margin: .6em;
   width: 50px;
@@ -145,6 +145,11 @@ a:hover:before {
   border-radius: 10px;  
   transform: translate3d(0, 0, 0);
   transform: translateZ(0);
+  box-shadow: 1px 1px 1px #9dbccd,
+               2px 2px 1px #9dbccd,
+               3px 3px 1px #9dbccd,
+               4px 4px 1px #9dbccd,
+               5px 5px 1px #9dbccd;
 }
 .but:before {
   content: '';
@@ -167,7 +172,7 @@ a:hover:before {
   grid-row: 3 / 4;
   grid-column: 1/-1;  
   display: grid;  
-  background-color: #eff0f1;
+  background-color: #d0dbdf;
   grid-template-columns: repeat(auto-fit, 2fr);
   grid-template-rows: auto;
   max-width: 100%;
@@ -178,10 +183,9 @@ a:hover:before {
 .grid-container > div:nth-child(3)  {
   grid-row: 4 / 5;
   grid-column: 1/-1;
-  background-attachment: fixed;
-  background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-37728.jpeg?1543473260282");  
   max-width: 100%;
   overflow: hidden;  
+  background-image: linear-gradient(#95b8cb, #f7f2ec);
   transform: translate3d(0, 0, 0);
   transform: translateZ(0);
 }
@@ -289,7 +293,7 @@ a:hover:before {
   font-size: 15px;
 }
 h4 {
-  text-decoration: underline overline double;
+  text-decoration: underline overline;
   width: auto;
   color: #00000f;
   line-height: 1.5;
@@ -312,11 +316,9 @@ h3 {
 .grid-container > div:nth-child(4)  {
   grid-row: 5 / 6;
   grid-column: 1/-1;
-  background-color: #dcdde1;
+  background-color: #224a54;
   display: grid;
-  background-image: url("https://cdn.glitch.com/d7147c70-1634-45ce-a9a5-0a570816ac31%2Fpexels-photo-1252869.jpeg?1542937527344");
   grid-template-rows: repeat(12, 50px);
-  background-attachment: fixed;
   grid-template-columns: repeat(11, 1fr);
   max-width: 100%;
   overflow: hidden;
@@ -385,7 +387,7 @@ footer {
 }
 .text img {
   width: 100%;
-  filter: grayscale(.9);
+  filter: grayscale(.7);
   transform: scale(1.1);
   transition: .5s;
 }
@@ -462,7 +464,7 @@ h2:before {
   top: 80%;
   right: 50%;
   transform: translateX(50%);
-  border-bottom: 2px solid #dac4ba; 
+  border-bottom: 4px solid #ffffff; 
 }
 
 .projects p {  
@@ -481,7 +483,7 @@ h2:before {
     width: 3em;
   }
   .grid-container {
-    grid-template-rows: 0 minmax(100vh,auto-fit) minmax(50vh,auto) minmax(50vh,auto) minmax(50vh,auto);
+    grid-template-rows: 0 minmax(40em,auto) minmax(50vh,auto) minmax(50vh,auto) minmax(50vh,auto);
   }
   
   .home h1 {

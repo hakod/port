@@ -21,27 +21,36 @@ function getP(e){
 function myFunction(){  
     console.log(window.scrollY+90, getP(about))
   if (window.scrollY+90 >= getP(about).x) {
-    document.querySelectorAll("a[href='#about']")[0].style.color = '#d9bdb1'
+    document.querySelectorAll("a[href='#about']")[0].style.color = '#9abbcc'
     nav.style.position = 'fixed'
-    nav.style.backgroundColor = 'rgba(70,30,50,.4)'
+    nav.style.lineHeight = '3'
+    nav.style.backgroundColor = '#224a54'
   } else {
     document.querySelectorAll("a[href='#about']")[0].style.color = 'white'
     nav.style.position = 'absolute'
+    nav.style.lineHeight = '5'
     nav.style.backgroundColor = 'transparent'
   }   
   if (window.scrollY+90 >= getP(projects).x) {
-    document.querySelectorAll("a[href='#projects']")[0].style.color = '#d9bdb1'
+    document.querySelectorAll("a[href='#projects']")[0].style.color = '#9abbcc'
     document.querySelectorAll("a[href='#about']")[0].style.color = 'white'
   } else {
     document.querySelectorAll("a[href='#projects']")[0].style.color = 'white'
   }   
   if (window.scrollY+90 >= getP(contact).x) {
-    document.querySelectorAll("a[href='#contact']")[0].style.color = '#d9bdb1'
+    document.querySelectorAll("a[href='#contact']")[0].style.color = '#9abbcc'
     document.querySelectorAll("a[href='#projects']")[0].style.color = 'white'
     document.querySelectorAll("a[href='#about']")[0].style.color = 'white'
   } else {
     document.querySelectorAll("a[href='#contact']")[0].style.color = 'white'
   }   
 }
+})
+
+
+window.removeEventListener("load", function(){
+  var load = document.getElementsByClassName("load")[0];
+  document.body.removeChild(load);
+
 })
 
